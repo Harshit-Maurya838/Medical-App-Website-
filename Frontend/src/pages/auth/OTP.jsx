@@ -51,7 +51,7 @@ export default function OTP({ onVerified, onBack, identifier }) {
       </button>
 
       {/* OTP Card */}
-      <div className="glass rounded-2xl p-8 w-full max-w-sm text-center">
+      <div className="glass rounded-2xl p-4 md:p-8 w-full max-w-sm text-center">
         <div
           className="w-14 h-14 mx-auto mb-4 rounded-full
                         bg-linear-to-br from-[#2B7FFF] via-[#AD46FF] to-[#00B8DB]
@@ -81,7 +81,7 @@ export default function OTP({ onVerified, onBack, identifier }) {
               maxLength={1}
               onChange={(e) => handleChange(e.target.value, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
-              className="w-11 h-12 text-center text-lg rounded-xl
+              className="w-10 h-10 md:w-11 md:h-12 text-center text-lg rounded-xl
                          bg-white/10 outline-none
                          focus:ring-2 focus:ring-white/40
                          transition"

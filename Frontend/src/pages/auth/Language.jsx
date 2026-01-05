@@ -22,7 +22,7 @@ export default function Language({ onNext }) {
 
   return (
     <AuthLayout>
-      <div className="relative w-full max-w-5xl flex flex-col items-center">
+      <div className="relative w-full max-w-5xl flex flex-col items-center p-4">
 
         <div className="mb-6">
           <div className="w-20 h-20 rounded-full bg-white/15 backdrop-blur-xl
@@ -31,7 +31,7 @@ export default function Language({ onNext }) {
           </div>
         </div>
 
-        <h1 className="text-2xl font-semibold mb-1">
+        <h1 className="text-2xl font-semibold mb-1 text-center">
           Welcome to HealthConnect
         </h1>
         <p className="text-white/70 mb-10">
@@ -39,7 +39,7 @@ export default function Language({ onNext }) {
         </p>
 
         {/* Language Grid */}
-        <div className="grid grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full mb-4">
           {LANGUAGES.map((lang) => {
             const isActive = selected === lang.code;
 
@@ -65,7 +65,7 @@ export default function Language({ onNext }) {
                 {isActive && (
                   <span className="absolute top-2 right-2 bg-cyan-400
                                    text-black rounded-full p-1">
-                    <Check size={12} />
+                    <Check size={10} />
                   </span>
                 )}
               </button>
@@ -73,19 +73,21 @@ export default function Language({ onNext }) {
           })}
         </div>
 
+        <button
+        onClick={() => onNext(selected)}
+          className="w-24 h-12 rounded-xl bg-cyan-400
+                     flex justify-between items-center
+                     shadow-lg hover:scale-105 transition cursor-pointer p-4"
+        >
+          <span className="text-black">Next</span>
+          <ChevronRight className="text-black" />
+        </button>
+
         <p className="text-xs text-white/50 mt-8">
           You can change this anytime in settings
         </p>
 
-        <button
-        onClick={() => onNext(selected)}
-          className="absolute right-0 bottom-0 translate-x-16 translate-y-6
-                     w-12 h-12 rounded-full bg-cyan-400
-                     flex items-center justify-center
-                     shadow-lg hover:scale-105 transition"
-        >
-          <ChevronRight className="text-black" />
-        </button>
+        
       </div>
     </AuthLayout>
   );

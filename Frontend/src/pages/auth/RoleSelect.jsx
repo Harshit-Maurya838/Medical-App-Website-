@@ -54,13 +54,13 @@ export default function RoleSelect({ onNext }) {
 
   return (
     <AuthLayout>
-      <div className="relative w-full max-w-5xl flex flex-col items-center">
+      <div className="relative w-full max-w-5xl flex flex-col items-center m-8">
         <h1 className="text-2xl font-semibold mb-1">Choose Your Role</h1>
-        <p className="text-white/60 mb-10">
+        <p className="text-white/60 mb-10 text-center">
           Select how you’ll be using HealthConnect
         </p>
 
-        <div className="grid grid-cols-2 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {ROLES.map((role) => {
             const Icon = role.icon;
             const isSelected = selectedRole === role.id;

@@ -35,7 +35,7 @@ export default function Login({ onNext, onBack }) {
 
   return (
     <AuthLayout>
-      <div className="glass rounded-2xl overflow-hidden w-full max-w-5xl grid grid-cols-2">
+      <div className="glass rounded-2xl overflow-hidden w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 m-4">
         {/* Left Section */}
         <div className="relative p-10 flex flex-col">
           <div
